@@ -1,0 +1,190 @@
+@name BN SD40-2 by unity
+@inputs Entity:entity
+@outputs 
+@persist E:entity
+@trigger 
+Chip =Entity
+ClipAngle = 45
+Entity:setAlpha(0)
+
+StripeColor1 = vec(30,30,30)    #----Color 1
+StripeColor2 = vec(0,127,31) #----Color 2
+CarModel = "models/gsgtrainprops/trains/propper/emd_sd40.mdl"       
+Logo = ""        
+ClipAngle = 80
+Entity:setAlpha(0) 
+timer("spawn",100)
+
+#----Top
+    A = 0
+    holoCreate(A)
+    holoParent(A,Entity)
+    holoModel(A, CarModel)
+    holoColor(A,StripeColor1)
+    holoBodygroup(A,9,3)
+    holoAng(A,Entity:toWorld(ang(0,0,0)))
+    holoPos(A,Entity:toWorld(vec(0,0,0))) 
+    holoClipEnabled(A,1,1)     
+    holoClip(A,1,vec(0,0,90),vec(0,0,9),0)
+    holoBodygroup(A,10,1)
+    holoBodygroup(A,8,2)
+#----Top
+    A = 1
+    holoCreate(A)
+    holoParent(A,Entity)
+    holoModel(A, CarModel)
+    holoColor(A,StripeColor2)
+    holoAng(A,Entity:toWorld(ang(0,0,0)))
+    holoPos(A,Entity:toWorld(vec(0,0,0))) 
+    holoClipEnabled(A,1,1)     
+    holoClip(A,1,vec(0,0,90),vec(0,0,-9),0)
+    holoBodygroup(A,9,3)
+    holoBodygroup(A,10,1)
+    holoBodygroup(A,8,2)
+A++#windows
+holoCreate(A)
+holoParent(A,Chip)
+holoModel(A,"models/flak/part/window/emd_standard_late.mdl")
+holoMaterial(A,"models/proppertextures/acrylic")
+holoScale(A,vec(1,1,1.1))
+holoColor(A,vec(170))
+holoAng(A,Entity:toWorld(ang(0,0,0)))
+holoPos(A,Entity:toWorld(vec(-212,0,89)))
+holoAlpha(A,100)
+
+A++ #BN logo front
+holoCreate(A,Chip:toWorld(+vec(-333.3,0,52)),vec(0.5),Chip:toWorld(+ang(0,0,0)))
+holoModel(A,"plane")
+holoScale(A,vec(5.5,6.6,1))
+holoColor(A,vec(200))
+holoParent(A,Chip)
+holoAng(A,Chip:toWorld(ang(90,208,0)))
+holoClip(A,1,vec(0,0,0),vec(0,1,0),0)
+holoClipEnabled(A,1,1)
+holoMaterial(A,"decals/bn_nose_stripe")
+
+A++ #BN logo front bent
+holoCreate(A,Chip:toWorld(+vec(-333.3,0,52)),vec(0.5),Chip:toWorld(+ang(0,0,0)))
+holoModel(A,"plane")
+holoScale(A,vec(5.5,6.6,1))
+holoColor(A,vec(200))
+holoParent(A,Chip)
+holoAng(A,Chip:toWorld(ang(90,152,0)))
+holoClip(A,1,vec(0,0,0),vec(0,-1,0),0)
+holoClipEnabled(A,1,1)
+holoMaterial(A,"decals/bn_nose_stripe")
+
+A++ #BN Cabside Logo left
+holoCreate(A,Chip:toWorld(+vec(-212,-61,60)),vec(0.5),Chip:toWorld(+ang(0,0,0)))
+holoModel(A,"plane")
+holoScale(A,vec(2,3,2))
+holoColor(A,vec(255))
+holoParent(A,Chip)
+holoAng(A,Chip:toWorld(ang(90,-90,0)))
+holoClip(A,1,vec(0,0,0),vec(0,0,0),0)
+holoClipEnabled(A,1,2)
+holoMaterial(A,"bobsters_trains/decals/burlington_northern")
+A++#
+
+A++ #BN Cabside Logo right
+holoCreate(A,Chip:toWorld(+vec(-212,61,60)),vec(0.5),Chip:toWorld(+ang(0,0,0)))
+holoModel(A,"plane")
+holoScale(A,vec(2,3,2))
+holoColor(A,vec(255))
+holoParent(A,Chip)
+holoAng(A,Chip:toWorld(ang(90,90,0)))
+holoClip(A,1,vec(0,0,0),vec(0,0,0),0)
+holoClipEnabled(A,1,1)
+holoMaterial(A,"bobsters_trains/decals/burlington_northern")
+
+A++#
+holoCreate(A)
+holoParent(A,Chip)
+holoScale(A,vec(1.2))
+holoModel(A,"models/monkcabdetailpack/alco/alcobell.mdl")
+holoMaterial(A,"")
+holoColor(A,vec(10))
+holoAng(A,Entity:toWorld(ang(0,-90,0)))
+holoPos(A,Entity:toWorld(vec(-115,-45,11)))
+holoEntity(A):setSubMaterial(1,"models/proppertextures/acrylic")  
+holoBodygroup(A,1,1)
+A++#class lights 1 front
+holoCreate(A)
+holoParent(A,Chip)
+holoModel(A,"models/gsgtrainprops/parts/auxlights/class_light.mdl")
+holoMaterial(A,"")
+holoColor(A,vec(0,127,31))
+holoAng(A,Entity:toWorld(ang(180,-28,0)))
+holoPos(A,Entity:toWorld(vec(-319.5,26,75)))
+holoEntity(A):setSubMaterial(2,"models/proppertextures/acrylic")
+holoEntity(A):setSubMaterial(3,"models/proppertextures/acrylic")
+holoEntity(A):setSubMaterial(1,"models/gsgtrainprops/auxlights/light_class_red")
+A++#class lights 2 front
+holoCreate(A)
+holoParent(A,Chip)
+holoModel(A,"models/gsgtrainprops/parts/auxlights/class_light.mdl")
+holoMaterial(A,"")
+holoColor(A,vec(0,127,31))
+holoAng(A,Entity:toWorld(ang(180,28,0)))
+holoPos(A,Entity:toWorld(vec(-319.5,-26,75)))
+holoEntity(A):setSubMaterial(2,"models/proppertextures/acrylic")
+holoEntity(A):setSubMaterial(3,"models/proppertextures/acrylic")
+holoEntity(A):setSubMaterial(1,"models/gsgtrainprops/auxlights/light_class_red")
+
+A++
+holoCreate(A)
+holoParent(A,Chip)
+holoModel(A,"models/lazpack/detail/sunshade.mdl")
+holoScale(A,vec(1,1,1))
+holoColor(A,vec(30))
+holoAng(A,Entity:toWorld(ang(0,180,0)))
+holoPos(A,Entity:toWorld(vec(-210,-60,104)))
+holoEntity(A):setSubMaterial(1,"models/proppertextures/acrylic")
+holoBodygroup(A,1,2)
+A++
+holoCreate(A)
+holoParent(A,Chip)
+holoModel(A,"models/lazpack/detail/sunshade.mdl")
+holoScale(A,vec(1,1,1))
+holoColor(A,vec(30))
+holoAng(A,Entity:toWorld(ang(0,0,0)))
+holoPos(A,Entity:toWorld(vec(-210,60,104)))
+holoEntity(A):setSubMaterial(1,"models/proppertextures/acrylic")
+holoBodygroup(A,1,2)
+
+A++#back light
+holoCreate(A)
+holoParent(A,Chip)
+holoModel(A,"models/gsgtrainprops/parts/headlights/headlight_twinbeam_plate.mdl")
+holoMaterial(A,"")
+holoColor(A,vec(30,30,30))
+holoAng(A,Entity:toWorld(ang(0,90,90)))
+holoPos(A,Entity:toWorld(vec(325,0,106)))
+holoEntity(A):setSubMaterial(1,"models/proppertextures/acrylic")  
+holoEntity(A):setSubMaterial(2,"bobsters_trains/light_on") 
+
+A++
+holoCreate(A)
+holoParent(A,Chip)
+holoModel(A,"models/gsgtrainprops/parts/headlights/headlight_base_twinbeam_plate.mdl")
+holoMaterial(A,"")
+holoColor(A,vec(30))
+holoAng(A,Entity:toWorld(ang(0,90,90)))
+holoPos(A,Entity:toWorld(vec(325,0,106)))
+holoEntity(A):setSubMaterial(1,"models/proppertextures/acrylic")  
+holoEntity(A):setSubMaterial(2,"bobsters_trains/light_on") 
+
+A++#front light
+holoCreate(A)
+holoParent(A,Chip)
+holoScale(A,vec(1))
+holoModel(A,"models/gsgtrainprops/parts/headlights/headlight_twinbeam_plate.mdl")
+holoMaterial(A,"")
+holoColor(A,vec(30))
+holoAng(A,Entity:toWorld(ang(90,180,0)))
+holoPos(A,Entity:toWorld(vec(-267,0,119)))
+holoEntity(A):setSubMaterial(1,"models/proppertextures/acrylic")  
+holoEntity(A):setSubMaterial(6,"models/proppertextures/acrylic") 
+holoEntity(A):setSubMaterial(2,"bobsters_trains/light_on") 
+holoBodygroup(A,2,0)
+
