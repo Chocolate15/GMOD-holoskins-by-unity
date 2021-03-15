@@ -1,0 +1,166 @@
+@name CSX GP38 by Unity
+@inputs [Entity]:entity 
+@persist A      
+StripeColor1 = vec(20,50,100)    #----Color 1
+StripeColor2 = vec(255,191,0) #----Color 2
+StripeColor3 = vec(155)    #----Color 3
+holoEntity(A):setSubMaterial(27,"models/proppertextures/filter_cloth")
+CarModel = "models/gsgtrainprops/trains/propper/emd_gp38.mdl"               
+Logo = "decals/icg2"
+ClipAngle = 80
+Entity:setAlpha(0) 
+
+
+#----blue
+    A = 0
+    holoCreate(A)
+    holoParent(A,Entity)
+    holoModel(A, CarModel)
+    holoColor(A,StripeColor2)
+    holoAng(A,Entity:toWorld(ang(0,0,0)))
+    holoPos(A,Entity:toWorld(vec(0,0,0))) 
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClipEnabled(A,3,1)
+    holoClipEnabled(A,4,1)     
+    holoClip(A,1,vec(-235,0,0),vec(-2,0,-1),0)
+    holoClip(A,2,vec(0,0,90),vec(0,0,-1),0)
+    holoClip(A,3,vec(0,0,18),vec(0,0,1),0)
+    holoEntity(A):setSubMaterial(9,"icegt/loco/ice_trainmetal_darkgrey")
+    holoEntity(A):setSubMaterial(14,"icegt/loco/ice_trainmetal_darkgrey")
+    holoEntity(A):setSubMaterial(17,"icegt/loco/ice_trainmetal_darkgrey")
+    holoEntity(A):setSubMaterial(27,"models/proppertextures/filter_cloth")
+    holoBodygroup(A,12,2)
+    holoBodygroup(A,10,4)
+
+    
+#----middle
+    A = 1
+    holoCreate(A)
+    holoParent(A,Entity)
+    holoModel(A, CarModel)
+    holoColor(A,StripeColor1)
+    holoAng(A,Entity:toWorld(ang(0,0,0)))
+    holoPos(A,Entity:toWorld(vec(0,0,0)))    
+    holoClipEnabled(A,1,1)    
+    holoClipEnabled(A,2,1)
+    holoClipEnabled(A,3,1)
+    holoClipEnabled(A,4,1)              
+    holoClip(A,1,vec(-235,0,0),vec(2,0,1),0)
+    holoClip(A,2,vec(0,0,18),vec(0,0,1),0)
+    holoClip(A,3,vec(-235,0,0),vec(2,0,1),0)
+    holoClip(A,4,vec(-95,0,0),vec(-2,0,-1),0)
+    holoEntity(A):setSubMaterial(9,"icegt/loco/ice_trainmetal_darkgrey")
+    holoEntity(A):setSubMaterial(14,"icegt/loco/ice_trainmetal_darkgrey")
+    holoEntity(A):setSubMaterial(17,"icegt/loco/ice_trainmetal_darkgrey")
+    holoEntity(A):setSubMaterial(27,"models/proppertextures/filter_cloth")
+    
+    A = 2
+    holoCreate(A)
+    holoParent(A,Entity)
+    holoModel(A, CarModel)
+    holoColor(A,StripeColor1)
+    holoAng(A,Entity:toWorld(ang(0,0,0)))
+    holoPos(A,Entity:toWorld(vec(0,0,0)))    
+    holoClipEnabled(A,1,1)    
+    holoClipEnabled(A,2,1)
+    holoClipEnabled(A,3,1)
+    holoClipEnabled(A,4,1)
+    holoClipEnabled(A,5,1)
+    holoClipEnabled(A,6,1)               
+    holoClip(A,1,vec(0,0,18),vec(0,0,1),0)
+    holoClip(A,2,vec(-235,0,0),vec(2,0,1),0)
+    holoClip(A,3,vec(-235,0,0),vec(2,0,-1),0)
+    holoClip(A,4,vec(0,0,50),vec(0,0,-1),0)
+    holoClip(A,5,vec(300,0,0),vec(-900,0,1),0)
+    holoEntity(A):setSubMaterial(14,"icegt/loco/ice_trainmetal_darkgrey")
+    holoEntity(A):setSubMaterial(17,"icegt/loco/ice_trainmetal_darkgrey")
+    holoEntity(A):setSubMaterial(27,"models/proppertextures/filter_cloth")
+    holoBodygroup(A,10,4)
+    
+     A = 3
+    holoCreate(A)
+    holoParent(A,Entity)
+    holoModel(A, CarModel)
+    holoColor(A,StripeColor3)
+    holoAng(A,Entity:toWorld(ang(0,0,0)))
+    holoPos(A,Entity:toWorld(vec(0,0,0)))    
+    holoClipEnabled(A,1,1)    
+    holoClipEnabled(A,2,1)
+    holoClipEnabled(A,3,1)
+    holoClipEnabled(A,4,1)
+    holoClipEnabled(A,5,1)              
+    holoClip(A,1,vec(0,0,18),vec(0,0,1),0)
+    holoClip(A,2,vec(-95,0,0),vec(2,0,1),0)
+    holoClip(A,3,vec(0,0,50),vec(0,0,1),0)
+    holoClip(A,4,vec(300,0,0),vec(-900,0,-1),0)
+    holoEntity(A):setSubMaterial(14,"icegt/loco/ice_trainmetal_darkgrey")
+    holoEntity(A):setSubMaterial(17,"icegt/loco/ice_trainmetal_darkgrey")
+    holoEntity(A):setSubMaterial(27,"models/proppertextures/filter_cloth")
+    holoEntity(A):setSubMaterial(20,"magtrains/invisible")
+    holoBodygroup(A,10,4)
+    
+     A = 4
+    holoCreate(A)
+    holoParent(A,Entity)
+    holoModel(A, CarModel)
+    holoColor(A,StripeColor2)
+    holoAng(A,Entity:toWorld(ang(0,0,0)))
+    holoPos(A,Entity:toWorld(vec(0,0,0)))    
+    holoClipEnabled(A,1,1)    
+    holoClipEnabled(A,2,1)
+    holoClipEnabled(A,3,1)
+    holoClipEnabled(A,4,1)
+    holoClipEnabled(A,5,1)              
+    holoClip(A,1,vec(0,0,130.440),vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,18),vec(0,0,1),0)
+    holoClip(A,3,vec(299.7,0,0),vec(900,0,-1),0)
+    holoEntity(A):setSubMaterial(14,"icegt/loco/ice_trainmetal_darkgrey")
+    holoEntity(A):setSubMaterial(17,"icegt/loco/ice_trainmetal_darkgrey")
+    holoEntity(A):setSubMaterial(27,"models/proppertextures/filter_cloth")
+    holoEntity(A):setSubMaterial(20,"magtrains/invisible")
+    holoBodygroup(A,14,3)
+    holoBodygroup(A,14,3)
+    
+     A = 5
+    holoCreate(A)
+    holoParent(A,Entity)
+    holoModel(A, CarModel)
+    holoColor(A,StripeColor3)
+    holoAng(A,Entity:toWorld(ang(0,0,0)))
+    holoPos(A,Entity:toWorld(vec(0,0,0)))    
+    holoClipEnabled(A,1,1)    
+    holoClipEnabled(A,2,1)
+    holoClipEnabled(A,3,1)
+    holoClipEnabled(A,4,1)
+    holoClipEnabled(A,5,1)              
+    holoClip(A,1,vec(0,0,140),vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,130.440),vec(0,0,1),0)
+    holoClip(A,3,vec(299.7,0,0),vec(900,0,-1),0)
+    holoEntity(A):setSubMaterial(14,"icegt/loco/ice_trainmetal_darkgrey")
+    holoEntity(A):setSubMaterial(17,"icegt/loco/ice_trainmetal_darkgrey")
+    holoEntity(A):setSubMaterial(27,"models/proppertextures/filter_cloth")
+    holoEntity(A):setSubMaterial(20,"magtrains/invisible")
+    holoBodygroup(A,10,4)
+    
+    
+#----blue bot
+    A = 6
+    holoCreate(A)
+    holoParent(A,Entity)
+    holoModel(A, CarModel)
+    holoColor(A,StripeColor2)
+    holoAng(A,Entity:toWorld(ang(0,0,0)))
+    holoPos(A,Entity:toWorld(vec(0,0,0))) 
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)     
+    holoClip(A,1,vec(0,0,18),vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,-50),vec(0,0,1),0)
+    holoEntity(A):setSubMaterial(14,"icegt/loco/ice_trainmetal_darkgrey")
+    holoEntity(A):setSubMaterial(17,"icegt/loco/ice_trainmetal_darkgrey")
+    holoEntity(A):setSubMaterial(27,"models/proppertextures/filter_cloth")
+    holoBodygroup(A,10,4)
+
+    
+
+    
